@@ -1,5 +1,5 @@
-const calculateBmi = (height: number, weight: number): string => {
-    let bmi: number = weight / ( height / 100 ) ** 2;
+export const calculateBmi = (height: number, weight: number): string => {
+    const bmi: number = weight / ( height / 100 ) ** 2;
 
     if (bmi < 16) {
         return 'Underweight (Severe thinness)';
@@ -18,7 +18,7 @@ const calculateBmi = (height: number, weight: number): string => {
     } else {
         return 'Obese (Class III)';
     }
-}
+};
 
 // interface Values {
 //     height: number;
@@ -49,5 +49,3 @@ const calculateBmi = (height: number, weight: number): string => {
 //     }
 //     console.log(errorMessage)
 // }
-
-export default calculateBmi
