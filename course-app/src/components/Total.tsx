@@ -13,9 +13,3 @@ const Total = (props: TotalProps) => <p>
 </p>
 
 export default Total
-
-
-{/* <p>
-Number of exercises{" "}
-{courseParts.reduce((carry, part) => carry + part.exerciseCount, 0)}
-</p> */}

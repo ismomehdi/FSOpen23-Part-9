@@ -1,19 +1,45 @@
-interface CoursePart {
-    name: string;
-    exerciseCount: number;
-}
+import { CourseProps, PartProps, assertNever } from "../types"
 
-interface CourseProps {
-    courses: CoursePart[];
+const Part = (props: PartProps) => {
+    switch (props.part.kind) {
+        case "basic":
+            return (
+                <>
+                <h4>{props.part.name} {props.part.exerciseCount}</h4>
+                <p>description: {props.part.description} </p>
+                </>
+            )
+        case "group":
+            return (
+                <>
+                <h4>{props.part.name} {props.part.exerciseCount}</h4>
+                <p>group project count: {props.part.groupProjectCount}</p>
+                </>
+            )
+        case "background":
+            return (
+                <>
+                <h4>{props.part.name} {props.part.exerciseCount}</h4>
+                <p>description: {props.part.description} </p>
+                <p>background material: {props.part.backgroundMaterial}</p>
+                </>
+            )
+        case "special":
+            return (
+                <>
+                <h4>{props.part.name} {props.part.exerciseCount}</h4>
+                <p>description: {props.part.description} </p>
+                <p>required: {props.part.requirements}</p>
+                </>
+            )
+        default:
+            return assertNever(props.part);
+    }
 }
 
 const Content = (props: CourseProps) => (
     <>
-        {props.courses.map((course, index) => (
-            <p key={index}>
-                {course.name} {course.exerciseCount}
-            </p>
-        ))}
+        {props.courses.map((course, index) => <Part part={course} key={index} />)}
     </>
 )
 
