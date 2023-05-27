@@ -36,3 +36,7 @@ export interface AllDiariesComponentProps {
 export interface DiaryFormProps {
     addDiary: (diary: NewDiaryEntry) => void;
 }
+
+export interface NotificationComponentProps {
+    notification: string
+}
