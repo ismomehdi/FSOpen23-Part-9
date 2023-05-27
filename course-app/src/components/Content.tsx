@@ -13,7 +13,7 @@ const Part = (props: PartProps) => {
             return (
                 <>
                 <h4>{props.part.name} {props.part.exerciseCount}</h4>
-                <p>group project count: {props.part.groupProjectCount}</p>
+                <p>project exercises: {props.part.groupProjectCount}</p>
                 </>
             )
         case "background":
@@ -29,7 +29,7 @@ const Part = (props: PartProps) => {
                 <>
                 <h4>{props.part.name} {props.part.exerciseCount}</h4>
                 <p>description: {props.part.description} </p>
-                <p>required: {props.part.requirements}</p>
+                <p>required: {props.part.requirements.join(', ')}</p>
                 </>
             )
         default:
