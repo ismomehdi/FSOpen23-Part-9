@@ -7,6 +7,10 @@ router.get('/', (_req, res) => {
   res.send(diagnoseService.getEntries());
 });
 
+router.get('/:id', (req, res) => {
+  res.send(diagnoseService.getOne(req.params.id));
+});
+
 router.post('/', (_req, res) => {
   res.send('Saving a diagnose!');
 });

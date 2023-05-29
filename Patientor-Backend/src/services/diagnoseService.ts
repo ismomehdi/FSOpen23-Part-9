@@ -1,15 +1,19 @@
 import diagnoseData from '../../data/diagnoses';
-import { DiagnoseEntry } from '../types';
 
-const getEntries = (): DiagnoseEntry[] => {
+const getEntries = () => {
   return diagnoseData;
 };
 
-const addDiagnose = () => {
+const getOne = (code: string) => {
+  return diagnoseData.find((d) => (d.code === code));
+};
+
+const addDiagnose = () =>{
   return null;
 };
 
 export default {
   getEntries,
-  addDiagnose
+  addDiagnose,
+  getOne
 };
